@@ -1,6 +1,26 @@
 const $ = s => document.querySelector(s)
 const $$ = s => document.querySelectorAll(s)
 
+const incrementPlayerCount = () => {
+  console.log('PLAYER WINS')
+  const playerTextScore = $('.scores .player').textContent
+  const playerScore = parseInt(playerTextScore) + 1
+
+  $('.scores .player').textContent = playerScore
+
+  // Brian --
+}
+
+const incrementComputerCount = () => {
+  console.log('COMPUTER WINS')
+  const computerTextScore = $('.scores .computer').textContent
+  const computerScore = parseInt(computerTextScore) + 1
+
+  $('.scores .computer').textContent = computerScore
+
+  // Brian --
+}
+
 const handleButtonClick = (event) => {
   const player = event.target.className
   const computer = getComputerMove()
@@ -12,11 +32,11 @@ const handleButtonClick = (event) => {
 
   if (player === 'rock') {
     if (computer === 'scissors') {
-      console.log('PLAYER WINS')
+      incrementPlayerCount()
     }
 
     if (computer === 'paper') {
-      console.log('COMPUTER WINS')
+      incrementComputerCount()
     }
 
     if (computer === 'rock') {
@@ -26,11 +46,11 @@ const handleButtonClick = (event) => {
 
   if (player === 'paper') {
     if (computer === 'rock') {
-      console.log('PLAYER WINS')
+      incrementPlayerCount()
     }
 
     if (computer === 'scissors') {
-      console.log('COMPUTER WINS')
+      incrementComputerCount()
     }
 
     if (computer === 'paper') {
@@ -40,11 +60,11 @@ const handleButtonClick = (event) => {
 
   if (player === 'scissors') {
     if (computer === 'paper') {
-      console.log('PLAYER WINS')
+      incrementPlayerCount()
     }
 
     if (computer === 'rock') {
-      console.log('COMPUTER WINS')
+      incrementComputerCount()
     }
 
     if (computer === 'scissors') {
@@ -52,7 +72,7 @@ const handleButtonClick = (event) => {
     }
   }
 
-    // HINT: Check for win, lose or draw, then call `gameOver()` eventually.
+  // HINT: Check for win, lose or draw, then call `gameOver()` eventually.
 }
 
 const getComputerMove = () => {
