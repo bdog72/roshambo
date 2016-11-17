@@ -100,9 +100,11 @@ const gameOver = (playerDidWin) => {
 
 const resetGame = () => {
         // TODO: Probably need to do more to reset the game here...
+  $('.scores .computer').textContent = 0
+  $('.scores .player').textContent = 0
   $('figure.player img').src = '/images/unknown.svg'
   $('figure.computer img').src = '/images/unknown.svg'
-  $('body').className = ''
+  $('body').className = 'main'
 }
 
 const main = () => {
