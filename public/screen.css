@@ -72,7 +72,6 @@ figure.draw img {
   display: flex;
   border: 10px solid black;
   height: 115px;
-
 }
 
 .scores span {
