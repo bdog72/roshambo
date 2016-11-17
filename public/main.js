@@ -71,7 +71,15 @@ const handleButtonClick = (event) => {
       console.log('TIE')
     }
   }
+  const playerScore = parseInt($('.scores .player').textContent)
+  const computerScore = parseInt($('.scores .computer').textContent)
 
+  if (computerScore === 2) {
+    gameOver(false)
+  }
+  if (playerScore === 2) {
+    gameOver(true)
+  }
   // HINT: Check for win, lose or draw, then call `gameOver()` eventually.
 }
 
