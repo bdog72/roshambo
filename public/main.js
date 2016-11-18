@@ -1,11 +1,29 @@
+// Shortcuts so we don't have to keep typing things like
+//
+//  document.querySelector(".scores .player")
+//
+// instead we can use the Shortcut
+//
+//  $(".scores .player")
+
 const $ = s => document.querySelector(s)
 const $$ = s => document.querySelectorAll(s)
 
+// defines a method called `incrementPlayerCount` that takes no arguments
+
+//    method name            arguments
 const incrementPlayerCount = () => {
+  // code starts here
+
   console.log('PLAYER WINS')
+
+  // Get the text that is current in the browser where the player's score is on screen
   const playerTextScore = $('.scores .player').textContent
+
+  // Turn that string into a number and then add one to it, store the result in `playerScore`
   const playerScore = parseInt(playerTextScore) + 1
 
+  // Take that new score and shove it back into where the player score is on screen
   $('.scores .player').textContent = playerScore
 
   // Brian --
